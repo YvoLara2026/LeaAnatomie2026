@@ -41,7 +41,7 @@ main{max-width:1180px;margin:26px auto;padding:0 18px 50px}.stats{display:grid;g
   <div class="section-title"><div><h2>Dein Lernplan</h2><p>Wähle ein Themengebiet oder starte eine gemischte Prüfung.</p></div></div>
   <div class="topics" id="topicGrid"></div>
   <div class="section-title"><div><h2>Direkt loslegen</h2><p>Kurze Einheiten, klare Rückmeldungen.</p></div></div>
-  <div class="panel"><div class="toolbar"><button class="primary" onclick="startQuiz('mixed')">Gemischte Prüfung starten</button><button onclick="startQuiz('mc')">Multiple Choice</button><button onclick="startQuiz('tf')">Richtig oder falsch</button><button onclick="startQuiz('fill')">Fachbegriffe ausfüllen</button></div><p class="small">Der Lernstand wird in diesem Browser gespeichert. Für einen anderen Computer oder Browser wird er nicht automatisch übertragen.</p></div>
+  <div class="panel"><div class="toolbar"><button class="primary" onclick="startQuiz('mixed')">Gemischte Prüfung starten</button><button onclick="startQuiz('mc')">Multiple Choice</button><button onclick="startQuiz('tf')">Richtig oder falsch</button><button onclick="startQuiz('fill')">Fachbegriffe ausfüllen</button></div><p class="small">Der Lernstand bleibt während dieser geöffneten Browser-Sitzung erhalten. Wenn du die Seite in einem neuen Tab neu öffnest, startest du wieder bei 0.</p></div>
   <div class="source-note"><strong>Zur Grundlage:</strong> Die Themen und Fachbegriffe orientieren sich an der hochgeladenen PDF. Die beschrifteten Lehreraufgaben zum Herzen auf PDF-Seite 9 sind als eigener Übungsbereich berücksichtigt. Wo die PDF keine eindeutige Antwort hergibt, wird keine zusätzliche prüfungsrelevante Behauptung als PDF-Wissen ausgegeben.</div>
  </section>
  <section id="view-lernen" class="hide">
@@ -214,8 +214,8 @@ const questions=[
 const state={answered:0,correct:0,points:0,done:{},byTopic:{},mode:'mixed',items:[],index:0,locked:false};
 const $=id=>document.getElementById(id);
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function loadProgress(){try{const x=JSON.parse(localStorage.getItem('anatomieLernstand')||'{}');Object.assign(state,x)}catch(e){} updateStats()}
-function saveProgress(){localStorage.setItem('anatomieLernstand',JSON.stringify({answered:state.answered,correct:state.correct,points:state.points,done:state.done,byTopic:state.byTopic}));updateStats()}
+function loadProgress(){try{const x=JSON.parse(sessionStorage.getItem('anatomieLernstand')||'{}');Object.assign(state,x)}catch(e){} updateStats()}
+function saveProgress(){sessionStorage.setItem('anatomieLernstand',JSON.stringify({answered:state.answered,correct:state.correct,points:state.points,done:state.done,byTopic:state.byTopic}));updateStats()}
 function updateStats(){$('statAnswered').textContent=state.answered;$('statCorrect').textContent=state.correct;$('statPoints').textContent=state.points;$('statTopics').textContent=Object.keys(state.byTopic).filter(k=>state.byTopic[k]>0).length+'/7';}
 function initTopics(){ $('topicGrid').innerHTML=topics.map(t=>`<div class="topic-card" onclick="openLearn('${t.id}')"><div class="num">THEMA ${t.n} · ${t.pages}</div><h3>${t.title}</h3><p>${t.desc}</p><div class="progressline"><i style="width:${Math.min(100,(state.byTopic[t.id]||0)*12)}%"></i></div></div>`).join('');$('topicFilter').innerHTML='<option value="all">Alle Themen</option>'+topics.map(t=>`<option value="${t.id}">${t.title}</option>`).join('');}
 function showView(v){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hide'));$('view-'+v).classList.remove('hide');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===v));}
