@@ -21,28 +21,28 @@ main{max-width:1180px;margin:26px auto;padding:0 18px 50px}.stats{display:grid;g
 <header>
  <div class="topline">Lernatelier · Physiotherapie · 2. Lehrjahr</div>
  <div class="hero">
-  <div><h1>Anatomie &<br>Physiologie</h1><p>Dein interaktiver Lernraum für Herz, Kreislauf, Blut und Immunabwehr. Fachbegriffe verstehen, Zusammenhänge üben und sicherer in die Zwischenprüfung gehen.</p>
+  <div><h1>Anatomie &<br>Physiologie</h1><p>Dein Lernraum für die aktuellen Themen der Leistungskontrolle – mit einem getrennten Zusatzbereich für Bewegungsapparat, Muskeln und Gelenke. Fachbegriffe verstehen, Zusammenhänge üben und sicherer in die Zwischenprüfung gehen.</p>
    <div class="pill">PDF-basiert · mit Sofortfeedback · mobil nutzbar</div>
   </div>
   <svg class="hero-art" viewBox="0 0 300 200" role="img" aria-label="Stilisierte medizinische Illustration von Herz und Kreislauf">
    <circle cx="150" cy="100" r="85" fill="#ffffff" opacity=".08"/><path d="M150 160 C135 145 75 106 88 70 C98 43 128 49 150 74 C172 49 202 43 212 70 C225 106 165 145 150 160Z" fill="#e96d6d" stroke="#ffd8d3" stroke-width="3"/><path d="M150 75 C140 55 140 35 151 22 M161 75 C181 52 177 34 190 28 M137 77 C120 55 112 42 115 28" fill="none" stroke="#f5b6b2" stroke-width="12" stroke-linecap="round"/><path d="M150 77 C143 100 143 117 150 139 M153 91 C177 98 184 114 174 132" fill="none" stroke="#b9e5ed" stroke-width="8" stroke-linecap="round"/><path d="M82 103 C48 89 45 64 54 47 M218 103 C252 89 255 64 246 47" fill="none" stroke="#80c9d1" stroke-width="4" stroke-linecap="round"/><circle cx="54" cy="47" r="5" fill="#80c9d1"/><circle cx="246" cy="47" r="5" fill="#80c9d1"/>
   </svg>
  </div>
- <nav><button class="navbtn active" data-view="start">Start</button><button class="navbtn" data-view="lernen">Lernübersichten</button><button class="navbtn" data-view="quiz">Quiz & Prüfung</button><button class="navbtn" data-view="luecken">Begriffe zuordnen</button><button class="navbtn" data-view="arbeitsblatt">Arbeitsblatt S. 9</button></nav>
+ <nav><button class="navbtn active" data-view="start">Start</button><button class="navbtn" data-view="lernen">Lernübersichten</button><button class="navbtn" data-view="quiz">Quiz & Prüfung</button><button class="navbtn" data-view="luecken">Begriffe zuordnen</button><button class="navbtn" data-view="arbeitsblatt">Arbeitsblatt S. 9</button><button class="navbtn" data-view="webwissen">Webwissen</button><button class="navbtn" data-view="extra">Zusatzwissen</button></nav>
 </header>
 <main>
  <div class="stats">
   <div class="stat"><strong id="statAnswered">0</strong><span>beantwortete Fragen</span></div>
   <div class="stat"><strong id="statCorrect">0</strong><span>richtig beantwortet</span></div>
   <div class="stat"><strong id="statPoints">0</strong><span>Punkte insgesamt</span></div>
-  <div class="stat"><strong id="statTopics">0/7</strong><span>Themen geübt</span></div>
+  <div class="stat"><strong id="statTopics">0/10</strong><span>Themen geübt</span></div>
  </div>
  <section id="view-start">
   <div class="section-title"><div><h2>Dein Lernplan</h2><p>Wähle ein Themengebiet oder starte eine gemischte Prüfung.</p></div></div>
   <div class="topics" id="topicGrid"></div>
   <div class="section-title"><div><h2>Direkt loslegen</h2><p>Kurze Einheiten, klare Rückmeldungen.</p></div></div>
   <div class="panel"><div class="toolbar"><button class="primary" onclick="startQuiz('mixed')">Gemischte Prüfung starten</button><button onclick="startQuiz('mc')">Multiple Choice</button><button onclick="startQuiz('tf')">Richtig oder falsch</button><button onclick="startQuiz('fill')">Fachbegriffe ausfüllen</button></div><p class="small">Der Lernstand bleibt während dieser geöffneten Browser-Sitzung erhalten. Wenn du die Seite in einem neuen Tab neu öffnest, startest du wieder bei 0.</p></div>
-  <div class="source-note"><strong>Zur Grundlage:</strong> Die Themen und Fachbegriffe orientieren sich an der hochgeladenen PDF. Die beschrifteten Lehreraufgaben zum Herzen auf PDF-Seite 9 sind als eigener Übungsbereich berücksichtigt. Wo die PDF keine eindeutige Antwort hergibt, wird keine zusätzliche prüfungsrelevante Behauptung als PDF-Wissen ausgegeben.</div>
+  <div class="source-note"><strong>Zur Grundlage:</strong> Herz, Kreislauf, Blut, Lymphsystem und Immunabwehr orientieren sich an der hochgeladenen PDF. Bewegungsapparat, Muskeln und Gelenke befinden sich in einem separaten Zusatzbereich und gehören ausdrücklich nicht zur aktuellen Leistungskontrolle. Die beschrifteten Lehreraufgaben zum Herzen auf PDF-Seite 9 sind als eigener Übungsbereich berücksichtigt. Wo die PDF keine eindeutige Antwort hergibt, wird keine zusätzliche prüfungsrelevante Behauptung als PDF-Wissen ausgegeben.</div>
  </section>
  <section id="view-lernen" class="hide">
   <div class="section-title"><div><h2>Lernübersichten</h2><p>Merkkarten mit Fachbegriffen und einfachen Erklärungen.</p></div></div>
@@ -86,6 +86,44 @@ main{max-width:1180px;margin:26px auto;padding:0 18px 50px}.stats{display:grid;g
    <div class="label-grid"><label>1. Primärer Taktgeber<input id="exc1" placeholder="Struktur"></label><label>2. Verzögerung/Überleitung<input id="exc2" placeholder="Struktur"></label><label>3. Verbindung zu den Kammern<input id="exc3" placeholder="Struktur"></label><label>4. Leitungsbahnen im Septum<input id="exc4" placeholder="Struktur"></label><label>5. Verteilung in der Kammermuskulatur<input id="exc5" placeholder="Struktur"></label></div><label>Erkläre in 1–2 Sätzen, warum die Erregungsleitung wichtig ist:<textarea id="excExplain" rows="3" placeholder="Schreibe deine Erklärung hier …"></textarea></label><button class="primary" onclick="checkExcitationImage()">Erregungsleitung prüfen</button><div id="excImageFeedback" class="feedback"></div>
   </div>
   <hr><h3>8. Gemischte Prüfung mit Auswertung</h3><p>Diese kurze Prüfung kombiniert die Originalaufgabe und die zentralen PDF-Themen. Jede richtige Antwort zählt einen Punkt; am Ende erhältst du Prozentwert und eine Einordnung.</p><button class="primary" onclick="startSourceExam()">Gemischte Prüfung starten</button><div id="sourceExam"></div></div>
+ </section>
+
+
+
+ <section id="view-extra" class="hide">
+  <div class="section-title"><div><h2>Zusatzwissen: Bewegungsapparat, Muskeln & Gelenke</h2><p>Ein eigener Lernbereich für später – nicht Bestandteil der aktuellen Leistungskontrolle.</p></div></div>
+  <div class="callout"><strong>Bitte beachten:</strong> Dieser Bereich ist vom aktuellen Prüfungsstoff getrennt. Die Fragen daraus werden nicht in der gemischten Prüfung, im Punktestand oder in der Bewertung der aktuellen Leistungskontrolle mitgezählt.</div>
+  <div class="panel content">
+   <h3>Wähle ein Zusatzthema</h3>
+   <div class="toolbar"><label for="extraTopicFilter">Thema:</label><select id="extraTopicFilter" class="fillinput"><option value="all">Alle Zusatzthemen</option><option value="bewegung">Bewegungsapparat</option><option value="muskeln">Muskeln</option><option value="gelenke">Gelenke</option></select><button class="primary" onclick="startExtraQuiz()">Zusatztraining starten</button></div>
+   <div id="extraQuizArea"></div>
+   <hr>
+   <h3>Lernübersichten</h3>
+   <div id="extraLearnCards" class="grid"></div>
+  </div>
+ </section>
+
+ <section id="view-webwissen" class="hide">
+  <div class="section-title"><div><h2>Webwissen zur Vertiefung</h2><p>Zusätzliche Erklärungen und Lernmedien – ergänzend zur PDF, nicht automatisch prüfungsrelevant.</p></div></div>
+  <div class="panel content">
+   <div class="callout"><strong>Wichtig für die Zwischenprüfung</strong><br>Die PDF „Anatomie & Physiologie der Inneren Organe“ bleibt die verbindliche Grundlage für die prüfungsrelevanten Inhalte. Die folgenden Seiten dienen zum besseren Verständnis und zur Vertiefung. Zusätzliche Webinformationen sind nur dann als Prüfungsstoff zu lernen, wenn sie auch in den Unterrichtsunterlagen vorkommen.</div>
+   <h3>1. Planet Schule – Mensch und Organe</h3>
+   <p>Erklärvideos zu Gehirn, Nerven, Muskeln, Organen und Verdauung. Gut geeignet, um Abläufe zusätzlich visuell zu verstehen.</p>
+   <p><a href="https://www.planet-schule.de/schwerpunkt/total-phaenomenal-mensch/index.html" target="_blank" rel="noopener noreferrer">Planet Schule: Total phänomenal – Mensch ↗</a></p>
+   <hr>
+   <h3>2. Planet Wissen – Anatomie des Menschen</h3>
+   <p>Nach Themen sortierte Artikel unter anderem zu Herz, Blut, Lunge, Leber, Nieren, Magen, Darm und Blutkreislauf. Die Seite kann beim Nachlesen einzelner Organe helfen.</p>
+   <p><a href="https://www.planet-wissen.de/natur/anatomie_des_menschen/index.html" target="_blank" rel="noopener noreferrer">Planet Wissen: Anatomie des Menschen ↗</a></p>
+   <hr>
+   <h3>3. Siemens Stiftung – kostenlose Biologie-Materialien</h3>
+   <p>Unterrichtsmaterialien und Medien zu Organen, Herzschlag und Atmung, Knochen und Muskeln sowie weiteren Themen. Vor der Übernahme einzelner Inhalte sollte geprüft werden, ob sie zum aktuellen Lernziel passen.</p>
+   <p><a href="https://medienportal.siemens-stiftung.org/de/unterrichtsmaterial-biologie" target="_blank" rel="noopener noreferrer">Siemens Stiftung: Unterrichtsmaterial Biologie ↗</a></p>
+   <hr>
+   <h3>4. MSD Manual – medizinisch geprüftes Hintergrundwissen</h3>
+   <p>Medizinisch geprüfte Erklärungen zum Körper und zu Organen. Teilweise deutlich ausführlicher und fachsprachlicher; am besten zum Nachschlagen geeignet, wenn ein Thema aus der PDF noch unklar ist.</p>
+   <p><a href="https://www.msdmanuals.com/de/heim/spezialthemen/der-k%C3%B6rper-des-menschen/einf%C3%BChrung-in-den-k%C3%B6rper-des-menschen" target="_blank" rel="noopener noreferrer">MSD Manual: Einführung in den Körper des Menschen ↗</a></p>
+   <p class="source-note">Diese Links öffnen externe Webseiten. Die Lernseite selbst bleibt unabhängig davon nutzbar. Die externen Inhalte werden nicht automatisch in die Quizfragen übernommen.</p>
+  </div>
  </section>
 
 </main>
@@ -168,6 +206,36 @@ const topics=[
 ['Aktive Immunisierung','Antigenkontakt löst eine eigene Immunantwort aus; Schutzaufbau benötigt Zeit und kann länger anhalten.'],
 ['Passive Immunisierung','Fertige Antikörper werden übertragen; Schutz kann rasch einsetzen, hält laut PDF aber relativ kurz an.']
 ],diagram:'immune'}
+
+];
+const extraTopics=[{id:'bewegung',n:'08',title:'Bewegungsapparat: Grundlagen',desc:'Knochen, Gelenke, Achsen und Bewegungen',pages:'Ergänzung · Physiotherapie 2. Lehrjahr',summary:'Der Bewegungsapparat ermöglicht Haltung und Bewegung. Der passive Teil umfasst vor allem Knochen, Gelenke und Bänder; der aktive Teil umfasst Skelettmuskeln und ihre Sehnen.',facts:[
+['Passiver Bewegungsapparat','Knochen, Gelenke, Knorpel und Bänder geben Halt und führen Bewegungen.'],
+['Aktiver Bewegungsapparat','Skelettmuskeln entwickeln Kraft und übertragen sie über Sehnen auf Knochen.'],
+['Gelenkknorpel','Überzieht Gelenkflächen, vermindert Reibung und verteilt Druck.'],
+['Bänder','Verbinden Knochen miteinander und unterstützen die Führung und Stabilität von Gelenken.'],
+['Bewegungsebenen','Sagittalebene: Beugung/Streckung; Frontalebene: Ab-/Adduktion; Transversalebene: Rotation.'],
+['Gelenkformen','Beispiele: Kugelgelenk (Schulter), Scharniergelenk (Finger-/Ellenbogengelenk, vereinfacht), Drehgelenk (proximales Radioulnargelenk).']
+],diagram:'circulation'},
+{id:'muskeln',n:'09',title:'Skelettmuskeln & Muskelarbeit',desc:'Muskelaufbau, Funktionen und Kontraktionsformen',pages:'Ergänzung · Physiotherapie 2. Lehrjahr',summary:'Skelettmuskeln erzeugen Bewegung und stabilisieren Gelenke. Muskeln arbeiten häufig in Gruppen: Agonist, Antagonist und Synergisten unterstützen unterschiedliche Aufgaben.',facts:[
+['Aufbau','Muskel → Muskelfaserbündel → Muskelfaser → Myofibrillen → Sarkomere.'],
+['Sehnen','Übertragen Muskelkraft auf Knochen.'],
+['Agonist','Der Muskel, der eine bestimmte Bewegung hauptsächlich ausführt.'],
+['Antagonist','Wirkt der Bewegung des Agonisten entgegen oder kontrolliert sie.'],
+['Synergisten','Unterstützen die Bewegung des Agonisten.'],
+['Konzentrisch','Der Muskel entwickelt Kraft und verkürzt sich.'],
+['Exzentrisch','Der Muskel entwickelt Kraft, während er unter Belastung länger wird.'],
+['Isometrisch','Der Muskel entwickelt Kraft, ohne dass sich seine Länge wesentlich ändert.']
+],diagram:'circulation'},
+{id:'gelenke',n:'10',title:'Gelenke & Bewegungsrichtungen',desc:'Gelenkaufbau, Stabilität und Bewegungsbegriffe',pages:'Ergänzung · Physiotherapie 2. Lehrjahr',summary:'Ein echtes synoviales Gelenk besitzt Gelenkflächen mit Knorpel, eine Gelenkhöhle mit Synovia und eine Gelenkkapsel. Form und Bänder beeinflussen Beweglichkeit und Stabilität.',facts:[
+['Gelenkknorpel','Glättet Gelenkflächen und verteilt Belastung.'],
+['Gelenkkapsel','Umhüllt das Gelenk; die innere Schicht bildet Gelenkflüssigkeit.'],
+['Synovia','Gelenkflüssigkeit, die schmiert und zur Versorgung des Gelenkknorpels beiträgt.'],
+['Flexion / Extension','Beugung / Streckung.'],
+['Abduktion / Adduktion','Wegführen von der Körpermitte / Heranführen zur Körpermitte.'],
+['Innen- / Außenrotation','Drehung nach innen / außen um die Längsachse.'],
+['Pronation / Supination','Drehbewegungen des Unterarms, bei denen die Handfläche nach unten bzw. oben ausgerichtet wird (in anatomischer Grundstellung als Orientierung).'],
+['Dorsalextension / Plantarflexion','Fußhebung Richtung Schienbein / Streckung des Fußes nach unten.']
+],diagram:'circulation'}
 ];
 const questions=[
 {t:'herz',type:'mc',q:'Wo liegt das Herz laut Unterlagen?',a:['Retrosternal im Mediastinum zwischen den Lungenflügeln','Im kleinen Becken hinter der Harnblase','In der Bauchhöhle unterhalb des Magens','Im rechten Lungenflügel'],c:0,e:'Die PDF beschreibt die Lage retrosternal im Mediastinum zwischen den beiden Lungenflügeln, auf dem Diaphragma.'},
@@ -230,6 +298,65 @@ if(type==='conduction')return `<svg viewBox="0 0 340 245" role="img" aria-label=
 if(type==='ecg')return `<svg viewBox="0 0 360 180" role="img" aria-label="Schematische EKG-Kurve mit P-Welle QRS-Komplex und T-Welle"><path d="M15 95H345" stroke="#b5c8cd" stroke-width="1.5"/><path d="M18 95 Q32 95 38 80 Q46 65 54 95 L95 95 L110 115 L125 40 L140 125 L155 95 L205 95 Q230 45 250 95 L340 95" stroke="#167d80" stroke-width="3" fill="none"/><g font-size="13" font-weight="700" fill="#123b4a"><text x="38" y="60">P</text><text x="125" y="28">QRS</text><text x="235" y="39">T</text></g><text x="180" y="155" text-anchor="middle" font-size="12" fill="#60737c">Schematische Kurve – nicht maßstabsgetreu</text></svg>`;
 if(type==='blood')return `<svg viewBox="0 0 340 210" role="img" aria-label="Schematische Blutbestandteile"><rect x="20" y="20" width="300" height="170" rx="15" fill="#fff3ed" stroke="#e7b7a8"/><g fill="#c94e59" stroke="#9d2f43" stroke-width="1"><ellipse cx="70" cy="65" rx="20" ry="11"/><ellipse cx="120" cy="100" rx="20" ry="11"/><ellipse cx="80" cy="145" rx="20" ry="11"/><ellipse cx="175" cy="55" rx="20" ry="11"/></g><g fill="#c6d7f2" stroke="#4e6c9c" stroke-width="2"><circle cx="235" cy="105" r="24"/><path d="M222 102q12-18 24 0q-5 20-24 0" fill="#718fc0"/></g><g fill="#e7b54d" stroke="#aa7b21"><circle cx="270" cy="50" r="5"/><circle cx="290" cy="65" r="4"/><circle cx="264" cy="75" r="4"/><circle cx="287" cy="142" r="5"/></g><text x="82" y="178" text-anchor="middle" font-size="12" fill="#7e2735">Erythrozyten</text><text x="235" y="145" text-anchor="middle" font-size="12" fill="#294a78">Leukozyt</text><text x="276" y="164" text-anchor="middle" font-size="11" fill="#8a641c">Thrombozyten</text></svg>`;
 return `<svg viewBox="0 0 340 210" role="img" aria-label="Schematische Immunabwehr"><circle cx="170" cy="100" r="52" fill="#e0f1ee" stroke="#167d80" stroke-width="3"/><circle cx="170" cy="100" r="22" fill="#9acdc6"/><g stroke="#c75b52" stroke-width="4" stroke-linecap="round"><path d="M90 45l-8-12m8 12l12-6m-12 6l-2 14M250 50l-8-10m8 10l13-2m-13 2l-3 13M255 155l-9-8m9 8l12 4m-12-4l-4 13"/></g><g fill="#f2c56b" stroke="#b9852b"><circle cx="85" cy="45" r="9"/><circle cx="250" cy="50" r="9"/><circle cx="255" cy="155" r="9"/></g><text x="170" y="174" text-anchor="middle" font-size="13" fill="#123b4a">Erkennung · Abwehr · Gedächtnis</text></svg>`}
+
+// Zusätzliche Fragevarianten: gleiche PDF-Inhalte, anders formuliert und anders abgefragt.
+const extraQuestions = [
+{t:'herz',type:'mc',q:'Welche Aussage zur Lage des Herzens ist korrekt?',a:['Es liegt im Mediastinum hinter dem Brustbein','Es liegt vollständig im rechten Brustkorb','Es liegt im kleinen Becken','Es liegt oberhalb des Schädels'],c:0,e:'Die PDF beschreibt das Herz retrosternal im Mediastinum zwischen den Lungenflügeln.'},
+{t:'herz',type:'tf',q:'Der linke Vorhof heißt Atrium sinistrum.',a:['Richtig','Falsch'],c:0,e:'Sinistrum bedeutet links; Atrium ist der Vorhof.'},
+{t:'herz',type:'mc',q:'Welche Struktur trennt rechten und linken Ventrikel?',a:['Septum interventriculare','Apex cordis','Aortenklappe','Sinusknoten'],c:0,e:'Das Septum interventriculare ist die Scheidewand zwischen den beiden Herzkammern.'},
+{t:'herz',type:'fill',q:'Wie heißt die muskuläre Schicht der Herzwand?',answer:['Myokard','myocard'],e:'Das Myokard ist die Muskelschicht des Herzens.'},
+{t:'herz',type:'mc',q:'Welche Klappe gehört zu den Taschenklappen?',a:['Mitralklappe','Trikuspidalklappe','Aortenklappe','Keine der genannten'],c:2,e:'Die Aortenklappe ist eine Taschenklappe; Mitral- und Trikuspidalklappe sind Segelklappen.'},
+{t:'gefaesse',type:'tf',q:'Arterien werden danach benannt, dass sie Blut vom Herzen wegführen.',a:['Richtig','Falsch'],c:0,e:'Entscheidend ist die Flussrichtung und nicht allein der Sauerstoffgehalt.'},
+{t:'gefaesse',type:'mc',q:'Welche Gefäßart besitzt die wichtigste Austauschfunktion mit dem Gewebe?',a:['Kapillaren','Aorta','Hohlvenen','Truncus pulmonalis'],c:0,e:'Durch die dünnen Kapillarwände erfolgt der Austausch von Gasen und Stoffen.'},
+{t:'gefaesse',type:'fill',q:'Wie heißt die innerste Schicht einer großen Gefäßwand?',answer:['Tunica intima','tunica intima'],e:'Die Tunica intima liegt innen; darauf folgen Tunica media und Tunica externa/Adventitia.'},
+{t:'gefaesse',type:'mc',q:'Welche Reihenfolge der Gefäßwandschichten ist von innen nach außen richtig?',a:['Intima – Media – Externa','Media – Externa – Intima','Externa – Intima – Media','Endokard – Myokard – Epikard'],c:0,e:'Die Gefäßwand wird von innen nach außen in Tunica intima, media und externa gegliedert.'},
+{t:'lymph',type:'mc',q:'Wo werden Lymphozyten unter anderem aktiviert und gefilterte Lymphe kontrolliert?',a:['In Lymphknoten','In den Herzklappen','In den Alveolen','In der Aorta'],c:0,e:'Lymphknoten sind Filterstationen der Lymphe und enthalten Immunzellen.'},
+{t:'lymph',type:'tf',q:'Knochenmark und Thymus zählen zu den primären lymphatischen Organen.',a:['Richtig','Falsch'],c:0,e:'Diese beiden Organe werden in der PDF als primäre Lymphorgane aufgeführt.'},
+{t:'lymph',type:'fill',q:'Wie heißt der große Lymphgang, der am linken Venenwinkel mündet?',answer:['Ductus thoracicus','ductus thoracicus'],e:'Der Ductus thoracicus mündet am linken Venenwinkel.'},
+{t:'herzaktion',type:'mc',q:'Welcher Knoten gibt normalerweise den Takt für die Erregungsbildung vor?',a:['Sinusknoten','AV-Knoten','His-Bündel','Tawara-Schenkel'],c:0,e:'Der Sinusknoten ist der primäre Taktgeber des Herzens.'},
+{t:'herzaktion',type:'fill',q:'Wie heißt die Phase, in der die Herzkammern Blut auswerfen?',answer:['Austreibungsphase','austreibungsphase'],e:'Die Austreibungsphase gehört zur Systole.'},
+{t:'herzaktion',type:'mc',q:'Welche Berechnung ergibt das Herzzeitvolumen?',a:['Herzfrequenz × Schlagvolumen','Blutdruck × Atemfrequenz','Schlagvolumen ÷ Herzfrequenz','Alter × Körpergröße'],c:0,e:'HZV = Herzfrequenz × Schlagvolumen.'},
+{t:'herzaktion',type:'tf',q:'Der Parasympathikus wirkt überwiegend bremsend auf die Herztätigkeit.',a:['Richtig','Falsch'],c:0,e:'Die PDF beschreibt den Parasympathikus als überwiegend hemmend auf die Herztätigkeit.'},
+{t:'ekg',type:'mc',q:'Welche EKG-Komponente zeigt die Erregungsausbreitung in den Ventrikeln?',a:['P-Welle','QRS-Komplex','T-Welle','Isoelektrische Linie'],c:1,e:'Der QRS-Komplex bildet die Erregungsausbreitung über die Herzkammern ab.'},
+{t:'ekg',type:'tf',q:'Die P-Welle steht für die Erregungsausbreitung in den Vorhöfen.',a:['Richtig','Falsch'],c:0,e:'Die P-Welle entspricht der Vorhoferregung.'},
+{t:'ekg',type:'fill',q:'Wie heißt die EKG-Welle, die mit der Repolarisation der Ventrikel verbunden ist?',answer:['T-Welle','t-welle'],e:'Die T-Welle steht für die Repolarisation der Herzkammern.'},
+{t:'blut',type:'mc',q:'Welche Blutzellen enthalten Hämoglobin und transportieren Sauerstoff?',a:['Erythrozyten','Thrombozyten','B-Lymphozyten','Plasmazellen'],c:0,e:'Erythrozyten enthalten Hämoglobin und übernehmen den Sauerstofftransport.'},
+{t:'blut',type:'tf',q:'Thrombozyten sind maßgeblich an der primären Hämostase beteiligt.',a:['Richtig','Falsch'],c:0,e:'Thrombozyten haften an der Verletzungsstelle und bilden einen ersten Wundverschluss.'},
+{t:'blut',type:'fill',q:'Wie heißt das Faserprotein, das bei der Blutgerinnung aus Fibrinogen entsteht?',answer:['Fibrin','fibrin'],e:'Fibrin bildet ein Netz, das den Blutpfropf stabilisiert.'},
+{t:'blut',type:'mc',q:'Welche Blutgruppe besitzt sowohl A- als auch B-Antigene auf den Erythrozyten?',a:['0','A','B','AB'],c:3,e:'Die Blutgruppe AB trägt A- und B-Antigene.'},
+{t:'immun',type:'mc',q:'Welche Zellen können sich zu Plasmazellen entwickeln?',a:['B-Zellen','Erythrozyten','Thrombozyten','Herzmuskelzellen'],c:0,e:'B-Zellen können sich zu Plasmazellen differenzieren; diese bilden Antikörper.'},
+{t:'immun',type:'tf',q:'Bei einer passiven Immunisierung werden fertige Antikörper übertragen.',a:['Richtig','Falsch'],c:0,e:'Bei der passiven Immunisierung werden Antikörper gegeben; der Schutz setzt rasch ein, hält aber kürzer an.'},
+{t:'immun',type:'mc',q:'Was ist typisch für eine aktive Immunisierung?',a:['Der Körper entwickelt eine eigene Immunantwort','Es werden ausschließlich fertige Antikörper übertragen','Sie wirkt immer sofort ohne Verzögerung','Sie betrifft nur rote Blutkörperchen'],c:0,e:'Bei der aktiven Immunisierung führt der Antigenkontakt zur eigenen Immunantwort; der Schutzaufbau benötigt Zeit.'},
+{t:'immun',type:'fill',q:'Wie nennt man die Aufnahme von Erregern durch Fresszellen?',answer:['Phagozytose','phagozytose'],e:'Bei der Phagozytose nehmen Fresszellen Erreger auf und verarbeiten sie.'}
+];
+
+extraQuestions.push(
+{t:'bewegung',type:'mc',q:'Welche Strukturen zählen hauptsächlich zum passiven Bewegungsapparat?',a:['Knochen, Gelenke und Bänder','Skelettmuskeln und Sehnen allein','Nerven und Blutgefäße','Herz und Lunge'],c:0,e:'Der passive Bewegungsapparat umfasst vor allem Knochen, Gelenke, Knorpel und Bänder.'},
+{t:'bewegung',type:'tf',q:'Sehnen verbinden in der Regel Muskel und Knochen.',a:['Richtig','Falsch'],c:0,e:'Sehnen übertragen die Kraft eines Muskels auf den Knochen.'},
+{t:'bewegung',type:'mc',q:'Welche Bewegung findet typischerweise in der Sagittalebene statt?',a:['Flexion und Extension','Abduktion und Adduktion','Rotation um die Längsachse','Zirkumduktion ausschließlich'],c:0,e:'Beugung und Streckung erfolgen überwiegend in der Sagittalebene.'},
+{t:'bewegung',type:'fill',q:'Wie heißt das Heranführen eines Körperteils zur Körpermitte?',answer:['Adduktion','adduktion'],e:'Adduktion bedeutet Heranführen zur Körpermitte.'},
+{t:'bewegung',type:'mc',q:'Welche Gelenkform ermöglicht Bewegungen in mehreren Achsen, zum Beispiel an der Schulter?',a:['Kugelgelenk','Scharniergelenk','Drehgelenk','Planes Gelenk ausschließlich'],c:0,e:'Das Schultergelenk ist ein Kugelgelenk mit großer Beweglichkeit.'},
+{t:'bewegung',type:'tf',q:'Gelenkknorpel hilft, Reibung zu vermindern und Druck zu verteilen.',a:['Richtig','Falsch'],c:0,e:'Der Gelenkknorpel ermöglicht reibungsarmes Gleiten und verteilt Belastung.'},
+{t:'muskeln',type:'mc',q:'Welche Aufgabe hat eine Sehne?',a:['Sie überträgt Muskelkraft auf Knochen','Sie produziert rote Blutkörperchen','Sie bildet Gelenkknorpel','Sie leitet elektrische Impulse im Herzen'],c:0,e:'Sehnen verbinden Muskel und Knochen und übertragen die Kraft.'},
+{t:'muskeln',type:'tf',q:'Bei einer isometrischen Muskelarbeit entwickelt der Muskel Kraft, ohne sich wesentlich zu verkürzen oder zu verlängern.',a:['Richtig','Falsch'],c:0,e:'Isometrisch bedeutet Kraftentwicklung bei annähernd gleichbleibender Muskellänge.'},
+{t:'muskeln',type:'mc',q:'Was beschreibt eine exzentrische Muskelarbeit?',a:['Der Muskel entwickelt Kraft und verlängert sich unter Belastung','Der Muskel ist vollständig entspannt','Der Muskel verkürzt sich immer ohne Last','Es arbeiten nur glatte Muskelzellen'],c:0,e:'Bei exzentrischer Arbeit kontrolliert der Muskel eine Bewegung, während er unter Last länger wird.'},
+{t:'muskeln',type:'fill',q:'Wie heißt der Muskel, der einer bestimmten Bewegung hauptsächlich entgegenwirkt?',answer:['Antagonist','antagonist'],e:'Der Antagonist wirkt dem Agonisten entgegen oder kontrolliert seine Bewegung.'},
+{t:'muskeln',type:'mc',q:'Welche Reihenfolge beschreibt den Aufbau vom größeren zum kleineren Muskelbestandteil?',a:['Muskel → Muskelfaserbündel → Muskelfaser → Myofibrille','Myofibrille → Muskel → Muskelfaserbündel → Muskelfaser','Sehne → Knochen → Sarkomer → Muskel','Gelenk → Muskel → Nerv → Knochen'],c:0,e:'Der Muskel besteht aus Muskelfaserbündeln, diese aus Muskelfasern, die Myofibrillen enthalten.'},
+{t:'muskeln',type:'tf',q:'Synergisten können einen Agonisten bei einer Bewegung unterstützen.',a:['Richtig','Falsch'],c:0,e:'Synergisten unterstützen die Ausführung einer Bewegung.'},
+{t:'gelenke',type:'mc',q:'Welche Flüssigkeit schmiert ein synoviales Gelenk?',a:['Synovia','Lymphe','Galle','Liquor'],c:0,e:'Die Synovia ist die Gelenkflüssigkeit.'},
+{t:'gelenke',type:'tf',q:'Flexion bedeutet Beugung und Extension bedeutet Streckung.',a:['Richtig','Falsch'],c:0,e:'Das sind die grundlegenden anatomischen Bewegungsbegriffe.'},
+{t:'gelenke',type:'mc',q:'Was bedeutet Abduktion?',a:['Wegführen von der Körpermitte','Heranführen zur Körpermitte','Beugung des Gelenks','Drehung nach innen'],c:0,e:'Abduktion ist das Wegführen von der Körpermitte.'},
+{t:'gelenke',type:'mc',q:'Welche Struktur umhüllt ein synoviales Gelenk?',a:['Gelenkkapsel','Achillessehne','Perikard','Tunica intima'],c:0,e:'Die Gelenkkapsel umgibt die Gelenkhöhle.'},
+{t:'gelenke',type:'fill',q:'Wie heißt das Heben des Fußes in Richtung Schienbein?',answer:['Dorsalextension','dorsalextension'],e:'Dorsalextension bezeichnet die Fußhebung Richtung Schienbein.'},
+{t:'gelenke',type:'mc',q:'Welche Aussage zu Bändern ist richtig?',a:['Sie verbinden Knochen miteinander und unterstützen Gelenkstabilität','Sie verbinden immer ausschließlich Muskel mit Knochen','Sie bilden die Synovia','Sie sind die innerste Schicht eines Blutgefäßes'],c:0,e:'Bänder verbinden Knochen und tragen zur Führung und Stabilität von Gelenken bei.'}
+);
+
+
+const extraTopicQuestions = extraQuestions.filter(q => ['bewegung','muskeln','gelenke'].includes(q.t));
+const currentAssessmentQuestions = extraQuestions.filter(q => !['bewegung','muskeln','gelenke'].includes(q.t));
+questions.push(...currentAssessmentQuestions);
+
+
 function startQuiz(mode,topicOverride){state.mode=mode;const filter=topicOverride||$('topicFilter').value;let pool=questions.filter(q=>(filter==='all'||q.t===filter)&&(mode==='mixed'||q.type===mode));if(mode==='mixed'&&filter==='all')pool=pool.slice();pool.sort(()=>Math.random()-.5);state.items=pool.slice(0,mode==='mixed'?15:12);state.index=0;state.locked=false;showView('quiz');document.querySelectorAll('.modebtn').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));renderQuestion();}
 function renderQuestion(){const area=$('quizArea');if(!state.items.length){area.innerHTML='<div class="panel">Für diese Auswahl sind noch keine passenden Fragen vorhanden.</div>';return}if(state.index>=state.items.length){const pct=Math.round(100*state.correct/(state.answered||1));area.innerHTML=`<div class="panel"><span class="pill">Runde abgeschlossen</span><h2>Gut gemacht!</h2><p>Du hast diese Runde beendet. In deinem gesamten Lernstand sind <strong>${state.points} Punkte</strong> gespeichert.</p><div class="progressbar"><div style="width:${pct}%"></div></div><p>${pct}% richtige Antworten in dieser Runde (Orientierungswert; der Gesamtlernstand zählt alle Versuche).</p><button class="primary" onclick="startQuiz(state.mode)">Noch eine Runde</button> <button onclick="showView('start')">Zur Übersicht</button></div>`;return}
 const q=state.items[state.index],t=topics.find(x=>x.id===q.t);let body='';
@@ -296,6 +423,40 @@ function checkExcitationImage(){checkTypedGroup([
  ['exc1',['Sinusknoten','Nodus sinuatrialis']],['exc2',['AV-Knoten','Atrioventrikularknoten','Nodus atrioventricularis']],['exc3',['His-Bündel','Hisbuendel','Fasciculus atrioventricularis']],['exc4',['Tawara-Schenkel','Tawara Schenkel','Kammerschenkel']],['exc5',['Purkinje-Fasern','Purkinjefasern','Purkinje Fasern']]
  ],'excImageFeedback','Die Erregung läuft vom Sinusknoten über AV-Knoten, His-Bündel und Tawara-Schenkel zu den Purkinje-Fasern.');
  const explanation=normAnswer($('excExplain').value);const note=document.createElement('p');note.innerHTML=explanation.length>20?'<strong>Deine Erklärung ist eingetragen.</strong> Vergleiche sie mit deinen Unterlagen: Die Erregung koordiniert die zeitlich abgestimmte Kontraktion der Vorhöfe und Kammern.':'<strong>Schreibe noch einen vollständigen Satz.</strong> Erkläre, wie die Erregung eine koordinierte Herzaktion ermöglicht.';$('excImageFeedback').appendChild(note);}
+
+
+function startExtraQuiz(){
+ const sel=document.getElementById('extraTopicFilter');
+ const chosen=sel ? sel.value : 'all';
+ let pool=extraTopicQuestions.filter(q=>chosen==='all'||q.t===chosen);
+ pool=pool.slice().sort(()=>Math.random()-0.5).slice(0,Math.min(10,pool.length));
+ const area=document.getElementById('extraQuizArea');
+ if(!area)return;
+ if(!pool.length){area.innerHTML='<p>Für dieses Thema sind noch keine Fragen vorhanden.</p>';return;}
+ area.innerHTML='<p class="small">Zusatztraining – zählt nicht zur aktuellen Leistungskontrolle.</p>'+pool.map((q,i)=>{
+  if(q.type==='fill')return `<div class="panel content"><h4>${i+1}. ${q.q}</h4><input id="extraA${i}" class="fillinput" placeholder="Antwort eingeben"><button onclick="checkExtraAnswer(${i})">Prüfen</button><div id="extraF${i}" class="feedback"></div></div>`;
+  return `<div class="panel content"><h4>${i+1}. ${q.q}</h4>${q.a.map((a,j)=>`<label class="option"><input type="radio" name="extraQ${i}" value="${j}"> ${a}</label>`).join('')}<button onclick="checkExtraAnswer(${i})">Prüfen</button><div id="extraF${i}" class="feedback"></div></div>`;
+ }).join('');
+ window._extraRound=pool;
+}
+function checkExtraAnswer(i){
+ const q=(window._extraRound||[])[i]; if(!q)return;
+ const fb=document.getElementById('extraF'+i); let ok=false;
+ if(q.type==='fill'){
+  const v=(document.getElementById('extraA'+i)?.value||'').trim().toLowerCase();
+  ok=(q.answer||[]).some(a=>a.toLowerCase()===v);
+ }else{
+  const chosen=document.querySelector(`input[name="extraQ${i}"]:checked`);
+  ok=!!chosen&&Number(chosen.value)===q.c;
+ }
+ fb.className='feedback '+(ok?'good':'bad');
+ fb.textContent=(ok?'Richtig! ':'Noch nicht richtig. ')+(q.e||'');
+}
+function renderExtraLearnCards(){
+ const el=document.getElementById('extraLearnCards'); if(!el)return;
+ el.innerHTML=extraTopics.map(t=>`<article class="panel content"><h3>${t.title}</h3><p>${t.summary}</p><ul>${t.facts.map(f=>`<li><strong>${f[0]}:</strong> ${f[1]}</li>`).join('')}</ul></article>`).join('');
+}
+document.addEventListener('DOMContentLoaded',renderExtraLearnCards);
 
 </script>
 </body>
